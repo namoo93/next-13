@@ -2893,6 +2893,32 @@
         ],
         "async": false
       }
+    },
+    "(app-client)/./app/components/LinkButton.tsx": {
+      "*": {
+        "id": "(sc_client)/./app/components/LinkButton.tsx",
+        "name": "*",
+        "chunks": [
+          "app/list/page:app/list/page"
+        ],
+        "async": false
+      },
+      "": {
+        "id": "(sc_client)/./app/components/LinkButton.tsx",
+        "name": "",
+        "chunks": [
+          "app/list/page:app/list/page"
+        ],
+        "async": false
+      },
+      "default": {
+        "id": "(sc_client)/./app/components/LinkButton.tsx",
+        "name": "default",
+        "chunks": [
+          "app/list/page:app/list/page"
+        ],
+        "async": false
+      }
     }
   },
   "edgeSSRModuleMapping": {},
@@ -9388,6 +9414,30 @@
       "chunks": [
         "static/css/app/layout.css"
       ]
+    },
+    "C:\\Users\\skqld\\Documents\\GitHub\\grotesq\\next-13\\app\\components\\LinkButton.tsx": {
+      "id": "(app-client)/./app/components/LinkButton.tsx",
+      "name": "*",
+      "chunks": [
+        "app/list/page:app/list/page"
+      ],
+      "async": false
+    },
+    "C:\\Users\\skqld\\Documents\\GitHub\\grotesq\\next-13\\app\\components\\LinkButton.tsx#": {
+      "id": "(app-client)/./app/components/LinkButton.tsx",
+      "name": "",
+      "chunks": [
+        "app/list/page:app/list/page"
+      ],
+      "async": false
+    },
+    "C:\\Users\\skqld\\Documents\\GitHub\\grotesq\\next-13\\app\\components\\LinkButton.tsx#default": {
+      "id": "(app-client)/./app/components/LinkButton.tsx",
+      "name": "default",
+      "chunks": [
+        "app/list/page:app/list/page"
+      ],
+      "async": false
     }
   }
 }
