@@ -1,6 +1,6 @@
 'use client'
 // import { ObjectId } from "mongodb";
-import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
 
 export default function LinkButton({id}:{id:string}) {
     let router = useRouter()

@@ -6,7 +6,7 @@ export default async function List() {
   let db = (await connectDB).db("forum");
   let result = await db.collection("post").find().toArray();
 
-  // console.log(result);
+  console.log(result);
   return (
     <div className="list-bg">
       {result.map((item, idx) => (
