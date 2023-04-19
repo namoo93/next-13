@@ -2,7 +2,7 @@
 // import { ObjectId } from "mongodb";
 import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation"
 
-export default function LinkButton({id}:{id:any}) {
+export default function LinkButton({id}:{id:string}) {
     let router = useRouter()
     //클라이언트 컴포넌트에서만 사용
     //router.back()
