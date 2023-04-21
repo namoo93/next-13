@@ -2,7 +2,9 @@ import { connectDB } from '@/util/database';
 
 export default async function handler(request: any, response: any) {
   let db = (await connectDB).db('forum');
+  let result = await db.collection('post').find().toArray();
 
+  // console.log(request.body);
   if (request.method == 'POST') {
     return response.status(200).json('ok');
   }

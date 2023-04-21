@@ -9,8 +9,8 @@ export default function Write() {
     <div className='list-bg'>
       <h4>글작성</h4>
       <form
-        method='POST'
-        action='/api/write'>
+        action='/api/write'
+        method='POST'>
         <input
           name='title'
           placeholder='in title'
