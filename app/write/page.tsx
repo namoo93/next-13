@@ -9,17 +9,16 @@ export default function Write() {
     <div className='list-bg'>
       <h4>글작성</h4>
       <form
-        action='/api/write'
+        action='/api/post/new'
         method='POST'>
         <input
           name='title'
           placeholder='in title'
-          value={''}
         />
-        <textarea
+        <input
           name='contens'
           placeholder='in contents'
-          value={''}></textarea>
+        />
         <button type='submit'>전송</button>
       </form>
     </div>
