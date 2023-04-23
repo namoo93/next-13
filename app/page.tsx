@@ -1,12 +1,13 @@
-import { connectDB } from "@/util/database";
+import { connectDB } from '@/util/database';
 
 export default async function Home() {
-  let db = (await connectDB).db("forum");
-  let result = await db.collection("post").find().toArray();
+  let db = (await connectDB).db('forum');
+  let result = await db.collection('post').find().toArray();
 
   // console.log(result);
-  return <div>
-    <p>Blog</p>
-    
-  </div>;
+  return (
+    <div>
+      <p>Wellcom My Blog</p>
+    </div>
+  );
 }
