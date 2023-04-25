@@ -18,8 +18,34 @@ export default function ListItem({ result }) {
             text={'go to detail'}
           />
           <button
-            onClick={() => {
-              fetch('/api/post/delete', { method: 'DELETE', body: item._id.toString() }).then(() => {});
+            onClick={(e) => {
+              // fetch('/api/post/test', { method: 'DELETE', body: JSON.stringify({ _id: item._id.toString() }) })
+              //   .then((res) => {
+              //     if (res.status == 200) {
+              //       return res.json();
+              //     } else {
+              //       //서버가 에러코드를 전송
+              //     }
+              //   })
+              //   .then((res) => {
+              //     //성공시 실행
+              //     console.log(res);
+              //     e.target.parentElement.style.opacity = 0;
+              //     setTimeout(() => {
+              //       e.target.parentElement.style.display = 'none';
+              //     }, 1000);
+              //   })
+              //   .catch((error) => {
+              //     //인터넷 문제로 실패시 실행
+              //     console.error(error);
+              //   });
+              fetch(`/api/post/delete?_id=${item._id.toString()}`).then(() => {
+                e.target.parentElement.style.opacity = 0;
+                setTimeout(() => {
+                  e.target.parentElement.style.display = 'none';
+                }, 1000);
+              }); // querysting //단점 : 민감한 데이터 불가 // 장점 간단함
+
               // 요청시 서버로 데이터도 전송하고싶으면 body : 항목에 넣읍시다.
               // 서버로 데이터를 주고 받을때는 문자와 숫자만 주고받을 수있습니다.
               // array, object 자료형에 큰따옴표를 붙이면 문자취급이 가능하며
@@ -33,7 +59,9 @@ export default function ListItem({ result }) {
           </button>
           {/* 서버에게 요청하는방법
           1. form 태그쓰기
-          2. Ajax 사용하기 */}
+          2. Ajax 사용하기
+            - 간단한 요청의 경우 fetch(/url?data=data&data2=data2) get으로 데이터를 담아 전송
+            - 민감한 정보 아이디비번, 댓글 등 은 post 전송 필요 */}
         </div>
       ))}
     </>
