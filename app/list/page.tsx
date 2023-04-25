@@ -3,10 +3,13 @@ import { connectDB } from '@/util/database';
 
 import ListItem from './ListItem';
 import LinkButton from './LinkButton';
+import { ItemType } from '../../types/ItemType';
+
+export const dynamic = 'force-dynamic';
 
 export default async function List() {
   let db = (await connectDB).db('forum');
-  let result = await db.collection('post').find().toArray();
+  let result = (await db.collection('post').find().toArray()) as ItemType[];
 
   // console.log(result);
   return (

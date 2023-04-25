@@ -1,7 +1,7 @@
 import { connectDB } from '@/util/database';
 import { ObjectId } from 'mongodb';
 
-export default async function Edit(props) {
+export default async function Edit(props: { params: { id: string } }) {
   let db = (await connectDB).db('forum');
   let result = await db.collection('post').findOne({ _id: new ObjectId(`${props.params.id}`) });
 
@@ -13,18 +13,18 @@ export default async function Edit(props) {
         method='POST'>
         <input
           name='title'
-          defaultValue={result.title}
+          defaultValue={result?.title}
           placeholder='in title'
         />
         <input
           name='contens'
-          defaultValue={result.content}
+          defaultValue={result?.content}
           placeholder='in contents'
         />
         <input
           style={{ display: 'none' }}
           name='_id'
-          defaultValue={result._id.toString()}
+          defaultValue={result?._id.toString()}
         />
         <button type='submit'>전송</button>
       </form>

@@ -1,6 +1,9 @@
 'use client';
+
 import LinkButton from './LinkButton';
-export default function ListItem({ result }) {
+import { ItemType } from '../../types/ItemType';
+
+export default function ListItem({ result }: { result: ItemType[] }) {
   return (
     <>
       {result.map((item, idx) => (
@@ -40,8 +43,10 @@ export default function ListItem({ result }) {
               //     console.error(error);
               //   });
               fetch(`/api/post/delete?_id=${item._id.toString()}`).then(() => {
+                //@ts-ignore
                 e.target.parentElement.style.opacity = 0;
                 setTimeout(() => {
+                  //@ts-ignore
                   e.target.parentElement.style.display = 'none';
                 }, 1000);
               }); // querysting //단점 : 민감한 데이터 불가 // 장점 간단함
