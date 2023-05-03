@@ -3,6 +3,7 @@ import './globals.css';
 import LoginBtn from './LoginBtn';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
+import { UserType } from '../types/UserType';
 
 export const metadata = {
   title: 'Create Next App',
@@ -23,7 +24,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               Appleforum
             </Link>
             <Link href='/list'>List</Link>
-            <LoginBtn user={session && session.user} />
+            <LoginBtn user={session ? (session.user as UserType) : null} />
           </div>
         </header>
 
