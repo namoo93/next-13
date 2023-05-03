@@ -3,10 +3,13 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '../auth/[...nextauth]';
 
 export default async function handler(request: any, response: any) {
-  // console.log(request.body);
   let session = await getServerSession(request, response, authOptions);
   // 현재 로그인한 유저정보불러오기
-  console.log(session);
+  // console.log(session?.user?.email);
+  if (session) {
+    request.body.author = session.user?.email;
+  }
+  // console.log(request.body);
 
   if (request.method == 'POST') {
     if (request.body.title == '') {

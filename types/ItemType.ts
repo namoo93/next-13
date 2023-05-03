@@ -5,4 +5,5 @@ export type ItemType = {
   title: string;
   date: string;
   contens: string;
+  author: string;
 };
