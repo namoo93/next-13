@@ -25,6 +25,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             </Link>
             <Link href='/list'>List</Link>
             <LoginBtn user={session ? (session.user as UserType) : null} />
+            {!session && <Link href='/register'>register</Link>}
           </div>
         </header>
 

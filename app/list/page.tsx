@@ -23,10 +23,13 @@ export default async function List() {
 
   return (
     <div className='list-bg'>
-      <LinkButton
-        url='/write/'
-        text='new'
-      />
+      {session && (
+        <LinkButton
+          url='/write/'
+          text='new'
+        />
+      )}
+
       <ListItem
         result={result}
         user={session ? session : null}

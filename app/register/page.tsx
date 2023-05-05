@@ -19,6 +19,12 @@ export default function Register() {
           type='password'
           placeholder='비번'
         />
+        <input
+          name='role'
+          type='text'
+          style={{ display: 'none' }}
+          value={'normal'}
+        />
         <button type='submit'>id/pw 가입요청</button>
       </form>
     </div>
