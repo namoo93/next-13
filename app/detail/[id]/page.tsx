@@ -6,6 +6,7 @@ import { getServerSession } from 'next-auth';
 import CommentInput from './CommentInput';
 import CommentEdit from './CommentEdit';
 import CommentDelete from './CommentDelete';
+import { notFound } from 'next/navigation';
 
 export default async function Detail(props: { params: { id: string } }) {
   let db = (await connectDB).db('forum');
@@ -15,6 +16,10 @@ export default async function Detail(props: { params: { id: string } }) {
   // console.log(session);
   let commentList = await db.collection('comment').find({ parent: props.params.id }).toArray();
   console.log('commentList', commentList);
+
+  if (result === null) {
+    return notFound();
+  }
 
   return (
     <div>
