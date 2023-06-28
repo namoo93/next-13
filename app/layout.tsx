@@ -17,15 +17,42 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang='en'>
       <body>
         <header>
-          <div className='navbar'>
-            <Link
-              href='/'
-              className='logo'>
-              Appleforum
-            </Link>
-            <Link href='/list'>List</Link>
+          <div className='gnb_wrap'>
+            <h1>
+              <Link
+                href='/'
+                className='logo'>
+                Catcha
+              </Link>
+            </h1>
+
+            <nav className='gnb'>
+              <ul>
+                <li>
+                  <Link href='/list'>review</Link>
+                </li>
+                <li>
+                  <Link href='/list'>shop</Link>
+                </li>
+                <li>
+                  <Link href='/list'>ranking</Link>
+                </li>
+              </ul>
+            </nav>
+            {!session ? (
+              <Link
+                className='register_btn'
+                href='/register'>
+                register
+              </Link>
+            ) : (
+              <Link
+                className='register_btn'
+                href='/list'>
+                my page
+              </Link>
+            )}
             <LoginBtn user={session ? (session.user as UserType) : null} />
-            {!session && <Link href='/register'>register</Link>}
           </div>
         </header>
 

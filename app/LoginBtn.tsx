@@ -14,12 +14,18 @@ export default function LoginBtn({ user }: { user: UserType | null }) {
   return (
     <>
       {user ? (
-        <>
-          <span>{user.name}</span>
-          <button onClick={() => signOut()}>Log out</button>
-        </>
+        <button
+          className='login_btn'
+          onClick={() => signOut()}>
+          <span className='pr-10'>{user.name}</span>
+          <span>Log out</span>
+        </button>
       ) : (
-        <button onClick={() => signIn()}>Log in</button>
+        <button
+          className='login_btn'
+          onClick={() => signIn()}>
+          Log in
+        </button>
       )}
     </>
   );
