@@ -1,6 +1,6 @@
 'use client';
 import { signIn, signOut } from 'next-auth/react';
-import { UserType } from '../types/UserType';
+import { UserType } from '../../types/UserType';
 // import { SessionProvider } from 'next-auth/react';
 // 클라이언트 컴포넌트에서 로그인된 유저 정보를 위 방법으로 받아올수 있으나
 //

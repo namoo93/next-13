@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import './globals.css';
-import LoginBtn from './LoginBtn';
+import LoginBtn from './components/LoginBtn';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { UserType } from '../types/UserType';
@@ -29,13 +29,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <nav className='gnb'>
               <ul>
                 <li>
-                  <Link href='/list'>review</Link>
+                  <Link href='/review'>review</Link>
                 </li>
                 <li>
-                  <Link href='/list'>shop</Link>
+                  <Link href='/shop'>shop</Link>
                 </li>
                 <li>
-                  <Link href='/list'>ranking</Link>
+                  <Link href='/ranking'>ranking</Link>
                 </li>
               </ul>
             </nav>
@@ -48,7 +48,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             ) : (
               <Link
                 className='register_btn'
-                href='/list'>
+                href='/mypage'>
                 my page
               </Link>
             )}
@@ -57,7 +57,39 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         </header>
 
         {children}
-        <footer></footer>
+
+        <div className='go-top'>
+          <button
+            type='button'
+            className='go-top-btn'>
+            <span>TOP</span>
+          </button>
+        </div>
+        <footer>
+          <div className='footer-row-wrap'>
+            <div>
+              <h2>contact me</h2>
+              <ul>
+                <li>
+                  <a
+                    target='_blank'
+                    href='https://www.google.com/intl/ko/gmail/about/'>
+                    Gmail
+                  </a>
+                  :<span>kimhyosun0535@gmail.com</span>
+                </li>
+                <li>
+                  <a
+                    target='_blank'
+                    href='https://www.rocketpunch.com/@ae51bdbc'>
+                    rocketpunch
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <address>namoo93 github portfolio.</address>
+          </div>
+        </footer>
       </body>
     </html>
   );

@@ -9,9 +9,9 @@ export default function LinkButton({ url, text }: { url: string; text: string })
   //router.refresh()
   //router.prefetch() -> 페이지에 필요한 파일들 미리로드
   //
-  // let a = usePathname()
-  // let b = useSearchParams()
-  // let c = useParams()
+  // let 현재 URL = usePathname()
+  // let searchparameter(querystring)출력 = useSearchParams()
+  // let [dynamicroute]에입력한내용(URL파라미터) = useParams()
   // console.log(c)
   return (
     <button

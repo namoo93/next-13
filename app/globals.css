@@ -8,7 +8,7 @@
   vertical-align: middle;
 }
 
-/* 메인 네비게이션 */
+/* 공통 네비게이션 */
 .gnb_wrap {
   background: white;
   padding: 20px;
@@ -44,11 +44,80 @@
   margin-right: 10px;
 }
 
-/* main page */
+/* 메인 페이지 */
 .main {
   padding: 20px;
+  height: 1000px;
+}
+.go-top {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 20px;
+  z-index: 1;
+  display: flex;
+  justify-content: end;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+.go-top > button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
+/* 메인 비쥬얼 이미지(탑 랭킹 이미지) */
+.main-rank {
+  display: flex;
+  justify-content: space-between;
+}
+figcaption {
+  visibility: hidden;
+  position: absolute;
+}
+.main-rank-image-box {
+  width: 100%;
+  position: relative;
+}
+.main-rank-image-wrap {
+  width: 320px;
+  height: 400px;
+  overflow: hidden;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-rank-image-wrap.rank1 {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  /* background-color: red; */
+}
+.main-rank-image-wrap.rank2 {
+  position: absolute;
+  z-index: 0;
+  left: 25%;
+  transform: translate(-50%, 100px);
+  /* background-color: blue; */
+}
+.main-rank-image-wrap.rank3 {
+  position: absolute;
+  z-index: 0;
+  left: 75%;
+  transform: translate(-50%, 100px);
+}
+
+.main-rank-image {
+  width: 100%;
+  object-fit: contain;
+  height: fit-content;
+}
+.preview-image {
+  opacity: 0.3;
+  width: 150px;
+}
 .list-bg {
   background: rgb(249, 250, 255);
   padding: 20px;
@@ -86,4 +155,29 @@ button {
   padding: 10px 15px;
   background: lightgray;
   border-radius: 5px;
+}
+
+section {
+  padding: 20px;
+}
+
+.loading-wrap {
+  margin: 20px;
+}
+.loading-wrap-title {
+  height: 40px;
+}
+body {
+  height: 100vh;
+  overflow-y: auto;
+}
+footer {
+  padding: 20px;
+  background-color: #aaa;
+}
+header {
+  position: sticky;
+  position: -webkit-sticky;
+  z-index: 1;
+  top: 0;
 }
