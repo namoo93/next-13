@@ -2,6 +2,7 @@ import { connectDB } from '@/util/database';
 import Image from 'next/image';
 import previewImage from '../public/previewimage.png';
 
+
 export default async function Home() {
   let db = (await connectDB).db('forum');
   let result = await db.collection('post').find().toArray();
@@ -36,6 +37,17 @@ export default async function Home() {
           </div>
         </div>
       </figure>
+
+      <Flicking
+        align='prev'
+        circular={true}
+        onMoveEnd={(e) => {
+          console.log(e);
+        }}>
+        <div className='panel'>1</div>
+        <div className='panel'>2</div>
+        <div className='panel'>3</div>
+      </Flicking>
 
       <div>1위2위3위 표시</div>
       <div>캐러셀로 최신순 리뷰 미리보기 최대 8개까지 + 더보기 버튼</div>
