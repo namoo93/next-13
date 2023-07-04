@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Script from 'next/script';
 import Link from 'next/link';
 import './globals.css';
 import LoginBtn from './components/LoginBtn';
@@ -17,19 +16,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   // console.log(session);
   return (
     <html lang='en'>
-      <Head>
-        <link
-          rel='stylesheet'
-          href='https://unpkg.com/@egjs/flicking/dist/flicking.css'
-          crossOrigin='anonymous'
-        />
-        <link
-          rel='stylesheet'
-          href='https://cdnjs.cloudflare.com/ajax/libs/egjs-flicking/4.x.x/flicking.css'
-          crossOrigin='anonymous'
-        />
-      </Head>
-
       <body>
         <header>
           <div className='gnb_wrap'>
@@ -107,16 +93,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           </div>
         </footer>
       </body>
-
-      {/* 플러그인 */}
-      <Script
-        src='https://unpkg.com/@egjs/flicking/dist/flicking.pkgd.min.js'
-        crossOrigin='anonymous'
-      />
-      <Script
-        src='https://cdnjs.cloudflare.com/ajax/libs/egjs-flicking/4.x.x/flicking.pkgd.min.js'
-        crossOrigin='anonymous'
-      />
     </html>
   );
 }
