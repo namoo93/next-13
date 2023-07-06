@@ -16,6 +16,13 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   // console.log(session);
   return (
     <html lang='en'>
+      <Head>
+        {/* <link
+          rel='stylesheet'
+          href='https://unpkg.com/@egjs/flicking/dist/flicking.css'
+          crossOrigin='anonymous'
+        /> */}
+      </Head>
       <body>
         <header>
           <div className='gnb_wrap'>

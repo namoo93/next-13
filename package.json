@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@egjs/grid": "^1.14.1",
     "@egjs/react-flicking": "^4.10.10",
     "@egjs/react-grid": "^1.15.1",
     "@next-auth/mongodb-adapter": "^1.1.3",
