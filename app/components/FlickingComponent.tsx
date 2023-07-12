@@ -5,8 +5,8 @@ import GridComponent from './GridComponent';
 export default function FlickingComponent() {
   return (
     <Flicking circular={true}>
-      {/* <div className='grid-panel'>1</div> */}
-      <div className='grid-box-wrap'>
+      <div className='grid-panel'>1</div>
+      <div className='grid-box'>
         <GridComponent />
       </div>
 
